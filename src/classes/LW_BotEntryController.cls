@@ -44,7 +44,7 @@ public with sharing class LW_BotEntryController {
 		}else{
 			botNo = (Integer)regBotParams.get('botNo');
 		}
-System.debug(botNo);
+System.debug('Bot No: '+ botNo);
 
 		/**
 		*	BOTをドメインに登録
