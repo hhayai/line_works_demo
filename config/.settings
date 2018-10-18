@@ -1,0 +1,17 @@
+{
+    "projectName": "line_works_demo",
+    "username": "admin@demo.ew",
+    "id": "084b83b0-d2cf-11e8-bf68-2d77a5cf90ec",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://demo-ew-dev-ed.my.salesforce.com",
+    "workspace": "C:\\Users\\annie\\Documents\\dev_prj",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}
