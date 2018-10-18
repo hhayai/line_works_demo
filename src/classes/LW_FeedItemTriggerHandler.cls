@@ -8,7 +8,7 @@ public with sharing class LW_FeedItemTriggerHandler {
     public void onAfterInsert(FeedItem[] triggerNew) {
 		// FeedItemのBodyから、メンションがついていれば宛先として利用し、Body全体をメッセージとして送信
 		// ※実際に利用する場合は、ガバナ制限やMessaging API側の制限を考慮する必要があるため、
-		// ※このままでは動作しなくなることがあります
+		// ※このままでは動作しなくなることがあります。必ずご自身で確認してください。
 		Set<String> userNames = new Set<String>();
 		Set<String> userIds = new Set<String>();
 		Map<String, String> msgMap = new Map<String, String>();

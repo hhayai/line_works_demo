@@ -18,7 +18,7 @@ public with sharing class LW_Utils {
 	// LINE WORKSの管理ユーザー（とりあえず1人分）
 	public static String MNG_USER_ID = '【自分のLINE WORKSアカウントのIDを入力】';
 	// BOT NO（テスト用）
-	public static Integer BOT_NO = 999999;		// 自分が登録したBotの番号を入力
+	public static Integer BOT_NO = 9999999;		// 自分が登録したBotの番号を入力
 
 	/**
 	*	Server Tokenを取得するクラス

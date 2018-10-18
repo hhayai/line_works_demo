@@ -18,7 +18,7 @@ public with sharing class LW_QueueableCommon {
 			// Server Tokenを取得
 			String SERVER_TOKEN = LW_Utils.getServerToken();
 			if( SERVER_TOKEN == null ){
-				System.debug('Error: Server Token is null');
+				System.debug('Error: Server Token is null.');
 				return;
 			}
 

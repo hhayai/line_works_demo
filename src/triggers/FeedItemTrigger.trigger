@@ -2,7 +2,7 @@
 *	FeedItemトリガ
 */
 trigger FeedItemTrigger on FeedItem (after insert) {
-    // トリガハンドラーをインスタンス化
+    //  トリガハンドラーをインスタンス化
     LW_FeedItemTriggerHandler handler = new LW_FeedItemTriggerHandler();
 
     /**
