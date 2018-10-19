@@ -356,7 +356,7 @@
         "createdById": "0057F000002bOc1QAE",
         "namespacePrefix": null,
         "lastModifiedById": "0057F000002bOc1QAE",
-        "lastModifiedDate": "2018-10-18T13:01:39.000+0000",
+        "lastModifiedDate": "2018-10-18T13:41:33.000+0000",
         "fullName": "LW_Utils",
         "fileName": "unpackaged/classes/LW_Utils.cls",
         "createdByName": "Hayai Hirokazu",
@@ -427,6 +427,22 @@
         "lastModifiedByName": "Hayai Hirokazu",
         "manageableState": "unmanaged",
         "type": "ApexTrigger",
+        "mmState": "clean"
+    },
+    "LW_BotCallbackController.cls": {
+        "id": "01p7F00000V3uo6QAB",
+        "name": "LW_BotCallbackController",
+        "createdDate": "2018-10-19T07:26:02.000+0000",
+        "createdById": "0057F000002bOc1QAE",
+        "namespacePrefix": null,
+        "lastModifiedById": "0057F000002bOc1QAE",
+        "lastModifiedDate": "2018-10-19T07:45:48.000+0000",
+        "fullName": "LW_BotCallbackController",
+        "fileName": "unpackaged/classes/LW_BotCallbackController.cls",
+        "createdByName": "Hayai Hirokazu",
+        "lastModifiedByName": "Hayai Hirokazu",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
         "mmState": "clean"
     }
 }
