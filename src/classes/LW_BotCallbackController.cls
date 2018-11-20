@@ -27,7 +27,7 @@ global with sharing class LW_BotCallbackController {
 		// send message text json
 		Map<String, Object> msgTextObj = new Map<String, Object>();
 		msgTextObj.put('botNo', LW_Utils.BOT_NO);
-		msgTextObj.put('accountId', LW_Utils.MNG_USER_ID);
+		msgTextObj.put('accountId', LW_Utils.LW_USER_ID);
 		Map<String, Object> msgContentObj = new Map<String, Object>();
 		msgContentObj.put('type', 'text');
 		String retMsg = 'メッセージありがとうございます。\n\n>> '+ message;

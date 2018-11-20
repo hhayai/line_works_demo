@@ -4,21 +4,27 @@
 public with sharing class LW_Utils {
 	/**
 	*	共通設定
+	*	以下、Salesforceのカスタム表示ラベルを事前に作成して、それぞれ値をセットしてください
+	*	LW_API_ID	LINE WORKSのDeveloper Consoleで発行したAPI ID
+	*	LW_SERVER_CONSUMER_KEY	LINE WORKSのDeveloper Consoleで発行したSERVER CONSUMER KEY
+	*	LW_SERVER_ID	LINE WORKSのDeveloper Consoleで発行したSERVER ID
+	*	LW_USER_ID	LINE WORKSの自身のアカウントID
+	*	LW_BOT_NO	登録したBOTの番号（こちらだけは、BOT登録後に値を書き換える）
 	*/
 	// LINE WORKS設定、URI
-	public static String API_ID = '【自分のAPI IDを入力】'; 
-	public static String SERVER_CONSUMER_KEY = '【自分のServer Consumer Keyを入力】'; 
-	public static String SERVER_ID = '【自分のServer Listに登録したServer IDを入力】'; 
+	public static String API_ID = System.Label.LW_API_ID;
+	public static String SERVER_CONSUMER_KEY = System.Label.LW_SERVER_CONSUMER_KEY; 
+	public static String SERVER_ID = System.Label.LW_SERVER_ID; 
     public static String LW_AUTH_URI = 'https://authapi.worksmobile.com/b/'+ API_ID +'/server/token';
     public static String LW_REGIST_BOT_TENANT_URI = 'https://apis.worksmobile.com/'+ API_ID +'/message/registerBot/v4';
     public static String LW_GET_BOT_LIST_URI = 'https://apis.worksmobile.com/'+ API_ID +'/message/getBotList/v4';
     public static String LW_REGIST_BOT_DOMAIN_URI = 'https://apis.worksmobile.com/'+ API_ID +'/message/registerBotDomain/v3';
     public static String LW_SEND_MESSAGE_URI = 'https://apis.worksmobile.com/'+ API_ID +'/message/sendMessage/v2';
 
-	// LINE WORKSの管理ユーザー（とりあえず1人分）
-	public static String MNG_USER_ID = '【自分のLINE WORKSアカウントのIDを入力】';
+	// LINE WORKSの管理ユーザー（デモ用として自分のLINE WORKSアカウントIDを登録）
+	public static String LW_USER_ID = System.Label.LW_USER_ID;
 	// BOT NO（テスト用）
-	public static Integer BOT_NO = 9999999;		// 自分が登録したBotの番号を入力
+	public static Integer BOT_NO = Integer.valueOf(System.Label.LW_BOT_NO);
 
 	/**
 	*	Server Tokenを取得するクラス

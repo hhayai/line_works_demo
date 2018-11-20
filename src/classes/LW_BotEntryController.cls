@@ -2,14 +2,18 @@
 *	LINE WORKSのテナントとドメインにBOTを登録するクラス
 */
 public with sharing class LW_BotEntryController {
+	public String botNoStr { get; set; }
+	public String errMsg { get; set; }
+
 	/**
 	*	LINE WORKSのテナントとドメインにBOTを登録する処理
 	*/
-	public static void registLW_BotEntry(){
+	public void registLW_BotEntry(){
 		// Server Tokenを取得
 		String SERVER_TOKEN = LW_Utils.getServerToken();
 		if( SERVER_TOKEN == null ){
 			System.debug('Error: Server Token is null.');
+			errMsg = 'Error: Server Token is null.';
 			return;
 		}
 
@@ -22,7 +26,7 @@ public with sharing class LW_BotEntryController {
 		bots.put('photoUrl', 'https://developers.worksmobile.com/favicon.png');
 		bots.put('description', 'This is test bot.');
 		List<String> manageUser = new List<String>();
-		manageUser.add(LW_Utils.MNG_USER_ID);
+		manageUser.add(LW_Utils.LW_USER_ID);
 		bots.put('managerList', manageUser);
 		String jsonBody = Json.serialize(bots);
 
@@ -39,12 +43,13 @@ public with sharing class LW_BotEntryController {
 		Map<String, Object> regBotParams = (Map<String, Object>)JSON.deserializeUntyped(botRes.getBody());
 		Integer botNo = null;
 		if( (Integer)regBotParams.get('code') != 200 ){
-			System.debug('Http Callout Error!'+ (Integer)regBotParams.get('code'));
+			System.debug('Http Callout Error!: '+ (Integer)regBotParams.get('code'));
+			errMsg = 'Http Callout Error!: '+ (String)regBotParams.get('code');
 			return;
 		}else{
 			botNo = (Integer)regBotParams.get('botNo');
+			botNoStr = 'Bot No: '+ String.valueOf(botNo);
 		}
-System.debug('Bot No: '+ botNo);
 
 		/**
 		*	BOTをドメインに登録
@@ -68,9 +73,9 @@ System.debug('Bot No: '+ botNo);
 		Http regDomainBotHttp = new Http();
 		HTTPResponse regDomainBotRes = regDomainBotHttp.send(regDomainBotReq);
 		if( regDomainBotRes.getStatusCode() != 200 ){
-			System.debug('Http Callout Error!'+ regDomainBotRes.getStatusCode());
+			System.debug('Http Callout Error!: '+ regDomainBotRes.getStatusCode());
+			errMsg = 'Http Callout Error!: '+ regDomainBotRes.getStatusCode();
 			return;
 		}
-System.debug('complete!');
 	}
 }

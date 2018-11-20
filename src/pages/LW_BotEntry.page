@@ -1,0 +1,8 @@
+<apex:page id="botEntryPage" docType="html-5.0" sidebar="false" controller="LW_BotEntryController">
+<apex:form>
+ボタンを押して、BOTを登録してください。<br/><br/>
+<apex:commandButton action="{!registLW_BotEntry}" value="BOTを登録" reRender="botNo, errMsg"/><br/>
+<apex:outputText value="{!botNoStr}" id="botNo"/><br/>
+<apex:outputText value="{!errMsg}" id="errMsg"/>
+</apex:form>
+</apex:page>
